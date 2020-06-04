@@ -6,11 +6,149 @@
 </head>
 <body>
     <div>
-        <h1>Hellow, world</h1>
+        <h1>Eduscram</h1>
     </div>
 
+    <h2>Svg-animation</h2>
     <div class="card">
-        <h2>SASS</h2>
+        <svg
+            viewBox="0 0 800 800"
+            width="500"
+            height="500"
+            class="svg-animation"
+        >
+            <style>
+
+                @keyframes reduce_radius {
+                    from { r: 10; }
+                    to { r: 3; }
+                }
+                @keyframes change_fill {
+                    0% { fill: #49549E; }
+                    25% { fill: #1bceb1; }
+                    50% { fill: #1bce4f; }
+                    75% { fill: #1bceb1; }
+                    100% { fill: #49549E; }
+                }
+
+                @keyframes change_stroke {
+                    0% { stroke: #49549E; }
+                    25% { stroke: #1bceb1; }
+                    50% { stroke: #1bce4f; }
+                    75% { stroke: #1bceb1; }
+                    100% { stroke: red; }
+                }
+
+                @keyframes change_stroke_width {
+                    0% { stroke-width: 10; }
+                    100% { stroke-width: 60; }
+                }
+
+                @keyframes change_stroke_dasharray {
+                    0% { stroke-dasharray: 0; }
+                    100% { stroke-dasharray: 95; }
+                }
+
+                @keyframes change_line_vision {
+                    0%   {stroke: white;}
+                    80%  {stroke: white;}
+                    85%  {stroke: black}
+                    100% {stroke: black;}
+                }
+
+                @keyframes left_eye_animate {
+                    0%   { cx: 50%; cy: 50%; }
+                    90%   { cx: 50%; cy: 50%; }
+                    100% { cx: 250; cy: 180;}
+                }
+
+
+                @keyframes right_eye_animate {
+                    0%   { cx: 50%; cy: 50%; }
+                    90%  { cx: 50%; cy: 50%; }
+                    100% { cx: 270; cy: 180;}
+                }
+
+                @keyframes mouth_animate {
+                    0%   { stroke-width: 0; }
+                    90%   { stroke-width: 0; }
+                    100% { stroke-width: 5; }
+                }
+
+                .svg-animation__line {
+                    animation: change_line_vision 25s;
+                 }
+
+                .svg-animation__circle {
+                    animation: change_fill 3s infinite,
+                               change_stroke 10s,
+                               change_stroke_width 20s,
+                               change_stroke_dasharray 20s;
+                }
+
+                .svg-animation__left-eye {
+                    animation: left_eye_animate 24s;
+                }
+
+                .svg-animation__right-eye {
+                    animation: right_eye_animate 23s;
+                }
+
+                 .svg-animation__mouth {
+                    animation: mouth_animate 26s;
+                }
+
+            </style>
+
+             <line
+                class="svg-animation__line"
+                x1="360"
+                y1="350"
+                x2="260"
+                y2="180"
+                stroke="black"
+                stroke-width="60"
+                stroke-linecap="round"
+            />
+
+            <line
+                class="svg-animation__mouth"
+                x1="240"
+                y1="230"
+                x2="280"
+                y2="210"
+                stroke="red"
+                stroke-width="5"
+                stroke-linecap="round"
+            />
+
+            <circle
+                class="svg-animation__circle"
+                r="150"
+                cx="50%"
+                cy="50%"
+                fill="gold"
+                stroke="red"
+                stroke-width="60"
+                stroke-dasharray="95";
+            />
+
+            <circle
+                class="svg-animation__left-eye"
+                r="5"
+                cx="250"
+                cy="180"
+                fill="gold"
+            />
+
+            <circle
+                class="svg-animation__right-eye"
+                r="5"
+                cx="270"
+                cy="180"
+                fill="gold"
+            />
+        </svg>
     </div>
 </body>
 </html>
